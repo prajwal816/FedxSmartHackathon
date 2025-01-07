@@ -1,7 +1,7 @@
 # FedxSmartHackathon
 
 # Project Title and Description
-Dynamic Route Optimization and Emission Reduction System
+* Dynamic Route Optimization and Emission Reduction System
 Brief explanation of what the project does.
 
 # Features
