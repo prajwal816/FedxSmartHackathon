@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "disable_existing_loggers": false,
+  "formatters": {
+    "standard": {
+      "format": "%(asctime)s [%(levelname)s] %(name)s: %(message)s"
+    }
+  },
+  "handlers": {
+    "default": {
+      "level": "INFO",
+      "formatter": "standard",
+      "class": "logging.StreamHandler"
+    },
+    "file": {
+      "level": "INFO",
+      "formatter": "standard",
+      "class": "logging.FileHandler",
+      "filename": "logs/fedx_smart.log",
+      "mode": "a"
+    }
+  },
+  "loggers": {
+    "": {
+      "handlers": [
+        "default",
+        "file"
+      ],
+      "level": "INFO",
+      "propagate": false
+    }
+  }
+}
