@@ -1,0 +1,216 @@
+{
+  "sample_routes": [
+    {
+      "name": "Manhattan Delivery Route",
+      "origin": {
+        "lat": 40.7128,
+        "lng": -74.0060,
+        "address": "FedEx Hub - Lower Manhattan"
+      },
+      "destinations": [
+        {
+          "lat": 40.7589,
+          "lng": -73.9851,
+          "address": "Times Square Office",
+          "priority": 1,
+          "service_time_minutes": 15
+        },
+        {
+          "lat": 40.6892,
+          "lng": -74.0445,
+          "address": "Brooklyn Heights Residential",
+          "priority": 2,
+          "service_time_minutes": 10
+        },
+        {
+          "lat": 40.7505,
+          "lng": -73.9934,
+          "address": "Central Park South Hotel",
+          "priority": 1,
+          "service_time_minutes": 20
+        },
+        {
+          "lat": 40.7282,
+          "lng": -73.7949,
+          "address": "Queens Business District",
+          "priority": 3,
+          "service_time_minutes": 12
+        }
+      ],
+      "vehicle_type": "diesel_truck",
+      "expected_metrics": {
+        "total_distance_km": 45.2,
+        "total_time_minutes": 180,
+        "fuel_consumed_liters": 15.8,
+        "estimated_cost_usd": 85.50
+      }
+    },
+    {
+      "name": "Brooklyn Industrial Route",
+      "origin": {
+        "lat": 40.6782,
+        "lng": -73.9442,
+        "address": "Brooklyn Distribution Center"
+      },
+      "destinations": [
+        {
+          "lat": 40.6591,
+          "lng": -73.9442,
+          "address": "Sunset Park Warehouse",
+          "priority": 1,
+          "service_time_minutes": 25
+        },
+        {
+          "lat": 40.6403,
+          "lng": -74.0099,
+          "address": "Bay Ridge Commercial",
+          "priority": 2,
+          "service_time_minutes": 18
+        },
+        {
+          "lat": 40.6928,
+          "lng": -73.9903,
+          "address": "Park Slope Retail",
+          "priority": 2,
+          "service_time_minutes": 12
+        },
+        {
+          "lat": 40.7081,
+          "lng": -73.9571,
+          "address": "Fort Greene Office Complex",
+          "priority": 1,
+          "service_time_minutes": 15
+        },
+        {
+          "lat": 40.6892,
+          "lng": -73.9442,
+          "address": "Prospect Heights Medical",
+          "priority": 1,
+          "service_time_minutes": 20
+        }
+      ],
+      "vehicle_type": "hybrid_truck",
+      "expected_metrics": {
+        "total_distance_km": 32.1,
+        "total_time_minutes": 165,
+        "fuel_consumed_liters": 9.6,
+        "estimated_cost_usd": 68.25
+      }
+    },
+    {
+      "name": "Long Island Express Route",
+      "origin": {
+        "lat": 40.7282,
+        "lng": -73.7949,
+        "address": "Queens Hub"
+      },
+      "destinations": [
+        {
+          "lat": 40.7505,
+          "lng": -73.6262,
+          "address": "Nassau County Office Park",
+          "priority": 1,
+          "service_time_minutes": 30
+        },
+        {
+          "lat": 40.8176,
+          "lng": -73.0482,
+          "address": "Suffolk County Distribution",
+          "priority": 1,
+          "service_time_minutes": 45
+        },
+        {
+          "lat": 40.7282,
+          "lng": -72.8092,
+          "address": "East End Retail Center",
+          "priority": 2,
+          "service_time_minutes": 25
+        }
+      ],
+      "vehicle_type": "electric_truck",
+      "expected_metrics": {
+        "total_distance_km": 185.3,
+        "total_time_minutes": 280,
+        "fuel_consumed_liters": 0,
+        "energy_consumed_kwh": 92.7,
+        "estimated_cost_usd": 95.40
+      }
+    }
+  ],
+  "test_scenarios": [
+    {
+      "name": "Peak Traffic Scenario",
+      "description": "Rush hour traffic conditions (7-9 AM, 5-7 PM)",
+      "conditions": {
+        "traffic_multiplier": 1.5,
+        "time_of_day": "08:00",
+        "congestion_level": "heavy"
+      },
+      "expected_impact": {
+        "time_increase_percentage": 50,
+        "fuel_increase_percentage": 20,
+        "cost_increase_percentage": 35
+      }
+    },
+    {
+      "name": "Weather Impact Scenario",
+      "description": "Heavy rain affecting driving conditions",
+      "conditions": {
+        "weather_impact": "heavy_rain",
+        "visibility_km": 2,
+        "precipitation_mm": 15
+      },
+      "expected_impact": {
+        "time_increase_percentage": 25,
+        "fuel_increase_percentage": 15,
+        "safety_impact": "moderate"
+      }
+    },
+    {
+      "name": "Electric Fleet Conversion",
+      "description": "Converting entire fleet to electric vehicles",
+      "conditions": {
+        "vehicle_type": "electric_truck",
+        "charging_infrastructure": "available"
+      },
+      "expected_impact": {
+        "emission_reduction_percentage": 75,
+        "fuel_cost_reduction_percentage": 60,
+        "maintenance_cost_reduction_percentage": 40
+      }
+    }
+  ],
+  "benchmark_data": {
+    "industry_averages": {
+      "fuel_efficiency_km_per_liter": 3.5,
+      "co2_emissions_kg_per_km": 0.18,
+      "delivery_cost_per_km": 1.25,
+      "on_time_delivery_percentage": 85,
+      "route_optimization_savings_percentage": 15
+    },
+    "best_practices": {
+      "fuel_efficiency_km_per_liter": 4.2,
+      "co2_emissions_kg_per_km": 0.12,
+      "delivery_cost_per_km": 0.95,
+      "on_time_delivery_percentage": 95,
+      "route_optimization_savings_percentage": 25
+    }
+  },
+  "sustainability_targets": {
+    "2024": {
+      "co2_reduction_percentage": 20,
+      "electric_vehicle_percentage": 15,
+      "renewable_energy_percentage": 30
+    },
+    "2025": {
+      "co2_reduction_percentage": 35,
+      "electric_vehicle_percentage": 30,
+      "renewable_energy_percentage": 50
+    },
+    "2030": {
+      "co2_reduction_percentage": 70,
+      "electric_vehicle_percentage": 80,
+      "renewable_energy_percentage": 100
+    }
+  }
+}
